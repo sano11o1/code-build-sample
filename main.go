@@ -11,5 +11,5 @@ func main() {
 }
 
 func HandleRequest() (string, error) {
-	return fmt.Sprintf("build by code build🏢🏢"), nil
+	return fmt.Sprintf("build by code build🏢🏢🚀"), nil
 }
