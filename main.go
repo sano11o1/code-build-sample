@@ -1,7 +1,15 @@
 package main
 
-import "log"
+import (
+	"fmt"
+
+	"github.com/aws/aws-lambda-go/lambda"
+)
 
 func main() {
-	log.Println("🏗️🏗️🏗️ build by code build")
+	lambda.Start(HandleRequest)
+}
+
+func HandleRequest() (string, error) {
+	return fmt.Sprintf("build by code build🏢🏢"), nil
 }
