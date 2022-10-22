@@ -1,0 +1,18 @@
+version: 0.2
+
+env:
+  shell: bash
+
+batch:
+  fast-fail: false
+        
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      go: 1.18
+
+  build:
+    on-failure: ABORT
+    commands:
+      - GOOS=linux GOARCH=amd64 go build -o handler main.go
