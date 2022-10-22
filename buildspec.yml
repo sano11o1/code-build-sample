@@ -17,4 +17,6 @@ phases:
     commands:
       - echo "start build"
       - GOOS=linux GOARCH=amd64 go build -o handler main.go
+      - zip function.zip handler
+      - ls -al
       - echo "finish build"
