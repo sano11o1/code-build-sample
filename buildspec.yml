@@ -17,6 +17,7 @@ phases:
     commands:
       - echo "start build"
       - GOOS=linux GOARCH=amd64 go build -o handler main.go
-      - zip function.zip handler
-      - ls -al
       - echo "finish build"
+      - zip function.zip handler
+      - aws lambda update-function-code --function-name helloworld --zip-file fileb://function.zip
+      - echo "finish update lambda function"
