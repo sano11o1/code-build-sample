@@ -10,9 +10,11 @@ phases:
   install:
     on-failure: ABORT
     runtime-versions:
-      go: 1.18
+      golang: 1.18
 
   build:
     on-failure: ABORT
     commands:
+      - echo "start build"
       - GOOS=linux GOARCH=amd64 go build -o handler main.go
+      - echo "finish build"
